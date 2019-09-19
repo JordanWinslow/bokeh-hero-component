@@ -8,7 +8,7 @@ const App = () => {
   return (
     <div>
       <BokehBackground>
-        <BokehText>BOKEH HERO COMPONENT</BokehText>
+        <BokehText>Bokeh Hero by Jordan Winslow</BokehText>
       </BokehBackground>
     </div>
   )

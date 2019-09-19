@@ -2,10 +2,15 @@ import React from "react"
 import styled from "styled-components"
 
 const Animate = styled.div`
+position: relative;
+z-index: 3;
+display: flex;
+height: 100vh;
+pointer-events: none;
+justify-content: center;
+align-items: center;
   font-size: 50px;
   color: white;
-  text-align: center;
-  line-height: 100vh;
 `
 
 const BokehText = props => {
