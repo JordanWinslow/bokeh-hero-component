@@ -1,88 +1,57 @@
-import React from "react"
-import styled from "styled-components"
+import React from "react";
+import styled from "styled-components";
 
-const Animate = styled.div`
+const ContentBox = styled.div`
   position: relative;
   z-index: 3;
-  display: flex;
-  height: 100vh;
-  pointer-events: none;
-  justify-content: center;
-  align-items: center;
-  font-size: 50px;
-  color: white;
-`
-
-/* TODO: Implement This Logic:
-
-var fancyHeading = document.getElementsByClassName('fancy')[0];
-var letters = fancyHeading.textContent.split('');
-
-var content = letters.map((val, i) => {
-  let delay = Math.floor((Math.random() * 1000) + 1);
-  return ('<span style="animation-delay: '+ delay + 'ms">'
-          + val +
-          '</span>');
-});
-
-fancyHeading.innerHTML = "";
-
-for (var i = 0; i < content.length; i++) {
-  fancyHeading.innerHTML += content[i];
-}
-
-*/
-
-/* TODO: Implement This Styling:
-
-@import url('https://fonts.googleapis.com/css?family=Raleway:300');
-
-$white: #f4f4f2;
-$black: #1e1e1d;
-$feature: #71cdf2;
-
-body, html {
-  height: 100%;
-  margin: 0;
-  background: $white;
-}
-
-#HeroSection {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: 'Raleway', sans-serif;
-
+  height: inherit;
+  width: 70vw;
+  margin: auto;
   text-align: center;
-}
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+`;
 
-h1 {
-  color: $feature;
+const Text = styled.h1`
+  @import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
+  font-family: "Raleway", sans-serif;
+  color: white;
   font-size: 1.5rem;
   text-transform: uppercase;
   letter-spacing: 1rem;
-  margin: 0;
-  span {
-    animation: fadeIn 1s alternate infinite;
-    opacity: 0;
-  }
-}
+  padding: 10vw;
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    filter: blur(10px);
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      filter: blur(10px);
+    }
+    50%,
+    100% {
+      opacity: 1;
+      filter: blur(0px);
+    }
   }
-  50%, 100% {
-    opacity: 1;
-    filter: blur(0px);
-  }
-}
+`;
 
-*/
+const LetterBox = styled.span`
+  animation: fadeIn 3s alternate infinite;
+  animation-delay: ${props => props.delay}ms;
+`;
 
 const BokehText = props => {
-  return <Animate>{props.children}</Animate>
-}
-
-export default BokehText
+  let text = props.bokehText;
+  let letters = text.split("");
+  let content = letters.map(letter => {
+    let delay = Math.floor(Math.random() * 1000 + 1);
+    return <LetterBox delay={delay}>{letter}</LetterBox>;
+  });
+  return (
+    <ContentBox>
+      <Text>{content}</Text>
+    </ContentBox>
+  );
+};
+export default BokehText;
