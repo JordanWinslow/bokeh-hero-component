@@ -16,7 +16,7 @@ const App = () => {
     <div>
       <Suspense fallback={<div>Loading...</div>}>
         <BokehBackground>
-          {/*<BokehText bokehText="Bokeh Hero by Jordan Winslow" />*/}
+          <BokehText bokehText="Bokeh Hero by Jordan Winslow" />
         </BokehBackground>
       </Suspense>
     </div>
