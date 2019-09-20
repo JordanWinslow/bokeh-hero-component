@@ -81,7 +81,7 @@ const BokehFlare = styled.div`
     height: 100%;
   }
 `
-
+// I'd love to refactor this to functional OOP with react Hooks but it's not a priority.
 class GridLayout {
   constructor(rect, width, height) {
     this.gridX = Math.floor(width / rect)
@@ -283,10 +283,8 @@ class LinkedAnimate extends React.Component {
     })
   }
 */
-
   render() {
     const { data, tx, ty } = this.state
-
     return (
       <BokehBackground>
         <BokehFlare
