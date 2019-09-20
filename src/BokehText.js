@@ -1,3 +1,9 @@
+/* 
+Author: Jordan Winslow
+LICENSE: Attribution-NonCommercial 4.0 International
+License Link: https://creativecommons.org/licenses/by-nc/4.0/legalcode 
+*/
+
 import React from "react";
 import styled from "styled-components";
 
