@@ -4,8 +4,8 @@ LICENSE: Attribution-NonCommercial 4.0 International
 License Link: https://creativecommons.org/licenses/by-nc/4.0/legalcode 
 */
 
-import React from "react";
-import styled from "styled-components";
+import React from "react"
+import styled from "styled-components"
 
 const ContentBox = styled.div`
   position: relative;
@@ -18,7 +18,7 @@ const ContentBox = styled.div`
   justify-content: center;
   align-items: center;
   pointer-events: none;
-`;
+`
 
 const Text = styled.h1`
   @import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
@@ -40,24 +40,24 @@ const Text = styled.h1`
       filter: blur(0px);
     }
   }
-`;
+`
 
 const LetterBox = styled.span`
   animation: fadeIn 3s alternate infinite;
   animation-delay: ${props => props.delay}ms;
-`;
+`
 
 const BokehText = props => {
-  let text = props.bokehText;
-  let letters = text.split("");
+  let text = props.bokehText
+  let letters = text.split("")
   let content = letters.map(letter => {
-    let delay = Math.floor(Math.random() * 1000 + 1);
-    return <LetterBox delay={delay}>{letter}</LetterBox>;
-  });
+    let delay = Math.floor(Math.random() * 1000 + 1)
+    return <LetterBox delay={delay}>{letter}</LetterBox>
+  })
   return (
     <ContentBox>
       <Text>{content}</Text>
     </ContentBox>
-  );
-};
-export default BokehText;
+  )
+}
+export default BokehText
